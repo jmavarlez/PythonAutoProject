@@ -1,6 +1,16 @@
+"""
+Demonstrates:
+Functions
+Loops and Conditionals
+"""
+
+
 import os
 listofmovies = []
 ans = ''
+
+def printmovie(movies):
+    print(f"{movies["Name"]}, directed by {movies["Director"]}, released on {movies["ReleaseDate"]}")
 
 def addmovie():
     print ("Add a Movie")
@@ -13,7 +23,7 @@ def addmovie():
 
 def showmovie():
     for movies in listofmovies:
-        print(f"{movies["Name"]}, directed by {movies["Director"]}, released on {movies["ReleaseDate"]}")
+        printmovie(movies)
     input("Press enter to continue.")
 
 
@@ -21,9 +31,8 @@ def searchmovie():
     movietitle = input("Enter the movie title to be searched: ").lower()
     for movies in listofmovies:
         if movietitle == movies["Name"].lower():
-            print(f"{movies["Name"]} exists in your collection"
-                  f"\n Director: {movies["Director"]}"
-                  f"\n Release Date: {movies["ReleaseDate"]}")
+            print("This movie exists in your collection")
+            printmovie(movies)
             break
     else:
         print(f"{movietitle} does not exist in your collection")
