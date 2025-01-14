@@ -6,7 +6,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 from selenium.common.exceptions import *
 
 def TestProject():
-    os.environ['WDM_SSL_VERIFY'] = '0'
+    #os.environ['WDM_SSL_VERIFY'] = '0'
     option = webdriver.ChromeOptions()
     option.add_argument('--no-sandbox')
     driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()), options=option)

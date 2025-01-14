@@ -1,0 +1,39 @@
+{
+  "test_BuyItem_TC01_BuySingleItem": {
+    "username": "standard_user",
+    "password": "secret_sauce",
+    "item": ["Sauce Labs Backpack"],
+    "firstname": "John",
+    "lastname": "Doe",
+    "postalcode": "7800",
+    "payment_information": "SauceCard #31337",
+    "shipping_information": "Free Pony Express Delivery!",
+    "item_total": "Item total: $29.99",
+    "tax": "Tax: $2.40",
+    "total": "Total: $32.39"
+  },
+  "test_BuyItem_TC02_BuyMultipleItem": {
+    "username": "standard_user",
+    "password": "secret_sauce",
+    "item": ["Sauce Labs Backpack", "Sauce Labs Bike Light", "Sauce Labs Bolt T-Shirt", "Sauce Labs Fleece Jacket", "Sauce Labs Onesie"],
+    "firstname": "John",
+    "lastname": "Doe",
+    "postalcode": "7800",
+    "payment_information": "SauceCard #31337",
+    "shipping_information": "Free Pony Express Delivery!",
+    "item_total": "Item total: $113.95",
+    "tax": "Tax: $9.12",
+    "total": "Total: $123.07"
+  },
+    "test_BuyItem_TC03_BuyerDetailsMandatory": {
+    "username": "standard_user",
+    "password": "secret_sauce",
+    "item": ["Sauce Labs Backpack"],
+    "firstname": "John",
+    "lastname": "Doe",
+    "postalcode": "7800",
+    "firstnameerr": "Error: First Name is required",
+    "lastnameerr": "Error: Last Name is required",
+    "postalcodeerr": "Error: Postal Code is required"
+  }
+}

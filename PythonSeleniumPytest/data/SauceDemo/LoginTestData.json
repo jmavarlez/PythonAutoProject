@@ -1,0 +1,18 @@
+{
+  "test_Login_TC01_Valid": {
+    "username": "standard_user",
+    "password": "secret_sauce"
+  },
+  "test_Login_TC02_InvalidPassword": {
+    "username": "standard_user",
+    "password": "incorrectpass"
+  },
+  "test_Login_TC03_InvalidUsername": {
+    "username": "notauser",
+    "password": "secret_sauce"
+  },
+  "test_Login_TC04_LockedUser": {
+    "username": "locked_out_user",
+    "password": "secret_sauce"
+  }
+}
