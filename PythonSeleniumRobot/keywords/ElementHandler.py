@@ -18,3 +18,11 @@ class ElementHandler:
         except:
             logging.error(f"Exception occurred!")
             raise
+
+
+    def clicks(self, locator):
+        try:
+            self.driver.find_element(By.XPATH, locator).click()
+            self.log.info(f"Element: {locator} is clicked.")
+        except:
+            self.log.error(f"Exception occurred!")
