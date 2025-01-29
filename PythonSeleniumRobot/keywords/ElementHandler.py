@@ -20,7 +20,7 @@ class ElementHandler:
             raise
 
 
-    def click(self, locator):
+    def clicks(self, locator):
         try:
             self.driver.find_element(By.XPATH, locator).click()
             self.log.info(f"Element: {locator} is clicked.")
