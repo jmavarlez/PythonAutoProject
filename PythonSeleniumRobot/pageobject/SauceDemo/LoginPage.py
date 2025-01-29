@@ -20,6 +20,7 @@ class LoginPage(ElementHandler):
     def click_button_login(self):
         self.click(loginpage_button_login)
         self.click(loginpage_button_login)
+        self.click(loginpage_button_login)
 
 
     def verify_text_login_error_displayed(self):
