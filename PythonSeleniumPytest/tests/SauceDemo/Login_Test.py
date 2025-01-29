@@ -1,16 +1,16 @@
 import pytest
+import os
 from PythonSeleniumPytest.util import *
-from PythonSeleniumPytest.pages.SauceDemo import Login_Page
+from PythonSeleniumPytest.pages.SauceDemo.Login_Page import LoginPage
 
 
-pytest.mark.usefixtures("SetupAndTeardown")
 class TestSauceDemoLogin:
 
     dataloc = 'PythonSeleniumPytest/data/SauceDemo/LoginTestData.json'
 
     @pytest.fixture(autouse=True)
-    def SetUp(self, SetupAndTeardown):
-        self.LoginPage = Login_Page.LoginPage(self.driver,self.log)
+    def SetUp(self,SetupAndTeardown):
+        self.LoginPage = LoginPage(self.driver,self.log)
         self.driver.get("https://www.saucedemo.com/")
         self.log.info(os.environ.get('PYTEST_CURRENT_TEST').split(':')[-1].split(' ')[0])
 
