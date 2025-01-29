@@ -1,0 +1,5 @@
+loginpage_input_username = "//input[@id='user-name']"
+loginpage_input_password = "//input[@id='password']"
+loginpage_button_login = "//input[@id='login-button']"
+loginpage_text_login_error = "//h3[contains(text(),'Username and password do not match')]"
+loginpage_text_login_locked_error = "//h3[contains(text(),'Sorry, this user has been locked out')]"
