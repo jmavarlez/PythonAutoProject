@@ -1,19 +1,18 @@
 import pytest
-from PythonSeleniumPytest.util import *
-from PythonSeleniumPytest.pages.SauceDemo import Login_Page
-from PythonSeleniumPytest.pages.SauceDemo import BuyItem_Page
+from PythonSeleniumPytest.util import jsonData
+from PythonSeleniumPytest.pages.SauceDemo.Login_Page import LoginPage
+from PythonSeleniumPytest.pages.SauceDemo.BuyItem_Page import BuyItemPage
 import os
 
-pytest.mark.usefixtures("SetupAndTeardown")
+
 class TestSauceDemoBuyItem:
 
     dataloc = 'PythonSeleniumPytest/data/SauceDemo/BuyItemTestData.json'
 
-
     @pytest.fixture(autouse=True)
     def SetUp(self, SetupAndTeardown):
-        self.LoginPage = Login_Page.LoginPage(self.driver, self.log)
-        self.BuyItemPage = BuyItem_Page.BuyItemPage(self.driver, self.log)
+        self.LoginPage = LoginPage(self.driver, self.log)
+        self.BuyItemPage = BuyItemPage(self.driver, self.log)
         self.driver.get("https://www.saucedemo.com/")
         self.log.info(os.environ.get('PYTEST_CURRENT_TEST').split(':')[-1].split(' ')[0])
 
@@ -36,6 +35,7 @@ class TestSauceDemoBuyItem:
         self.BuyItemPage.click_button_finish()
         result = self.BuyItemPage.verify_checkout_message()
         assert result == True
+
 
     def test_BuyItem_TC02_BuyMultipleItem(self):
         testdata = jsonData.jsonData.loaddata(self.dataloc)
@@ -89,8 +89,7 @@ class TestSauceDemoBuyItem:
 
 
     def xtest_BuyItem_TC01_BuySingleItem(self):
-        testdata = jsonData.jsonData.loaddata(self.dataloc)
-        print(testdata['item'])
+        pass
 
 
 
